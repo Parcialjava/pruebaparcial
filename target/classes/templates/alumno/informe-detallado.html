@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Informe Detallado</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+
+    <div class="card shadow">
+        <div class="card-header text-center bg-primary text-white">
+            <h3 class="mb-0">Informe Detallado</h3>
+        </div>
+
+        <div class="card-body">
+
+            <!-- NOMBRE COMPLETO -->
+            <p class="fs-5">
+                <strong>Estudiante:</strong>
+                <span th:text="${alumno.pnomb} + ' ' + ${alumno.snomb} + ' ' + ${alumno.papellido} + ' ' + ${alumno.sapellido}"></span>
+            </p>
+
+            <!-- DOCUMENTO -->
+            <p class="fs-5">
+                <strong>Documento:</strong>
+                <span th:text="${alumno.numdoc}"></span>
+            </p>
+
+            <!-- TELÉFONO -->
+            <p class="fs-5">
+                <strong>Teléfono:</strong>
+                <span th:text="${alumno.telefono}"></span>
+            </p>
+
+            <!-- CORREO -->
+            <p class="fs-5">
+                <strong>Correo:</strong>
+                <span th:text="${alumno.correo}"></span>
+            </p>
+
+            <!-- PUNTAJE GENERAL -->
+            <p class="fs-5">
+                <strong>Puntaje General:</strong>
+                <span th:text="${examen.total}"></span>
+            </p>
+
+            <hr>
+
+            <h4 class="mt-4">Puntajes por Competencia</h4>
+
+            <ul class="list-group mt-3">
+
+                <li class="list-group-item d-flex justify-content-between">
+                    Comunicación:
+                    <span th:text="${examen.comunica}"></span>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between">
+                    Razonamiento Cuantitativo:
+                    <span th:text="${examen.razcuant}"></span>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between">
+                    Lectura Crítica:
+                    <span th:text="${examen.lectcrit}"></span>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between">
+                    Competencias Ciudadanas:
+                    <span th:text="${examen.compciud}"></span>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between">
+                    Inglés:
+                    <span th:text="${examen.ingles}"></span>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between">
+                    Proyecto Ingeniería:
+                    <span th:text="${examen.proyingen}"></span>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between">
+                    Pensamiento Científico:
+                    <span th:text="${examen.pcientifico}"></span>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between">
+                    Diseño de Software:
+                    <span th:text="${examen.disensoft}"></span>
+                </li>
+
+            </ul>
+
+            <div class="text-center mt-4">
+                <a href="/alumno/panel" class="btn btn-secondary btn-lg">Volver</a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
